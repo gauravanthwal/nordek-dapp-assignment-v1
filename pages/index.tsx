@@ -3,12 +3,15 @@ import { Welcome, Navbar, Transaction } from "../components";
 
 import { TransactionsProvider } from "../context/TransactionContext";
 import { useEffect, useState } from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home: NextPage = () => {
   const [isDarkMode, setIsDartMode] = useState(true);
 
   return (
     <div className={`${isDarkMode && "dark"} min-h-screen`}>
+      <ToastContainer theme="dark" position="top-right"/>
       <TransactionsProvider>
           <div
             className={`${isDarkMode && "gradient-bg-welcome"} min-h-screen`}
