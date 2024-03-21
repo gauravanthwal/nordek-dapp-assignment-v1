@@ -14,7 +14,7 @@ const Navbar = ({ setIsDartMode, isDarkMode }: any) => {
     });
   };
   return (
-    <div className="bg-gray-100 dark:bg-transparent">
+    <div className="">
       <nav className="max-w-5xl  mx-auto flex justify-between items-center py-4 mb-8 px-2">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl text-gray-700 dark:text-white font-semibold">
