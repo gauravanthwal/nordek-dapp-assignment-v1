@@ -16,11 +16,11 @@ const TransactionCard = ({
   timestamp,
 }: IProps) => {
   return (
-    <div className="text-white border border-gray-900  p-3 rounded-md shadow-md shadow-gray-900">
+    <div className="dark:text-white text-gray-700 border border-gray-900  p-3 rounded-md shadow-md shadow-gray-900">
       {addressFrom && (
         <p className="text-gray-400">
           From:{" "}
-          <span className="text-white">
+          <span className="dark:text-white text-gray-700">
             {addressFrom.slice(0, 5)}...
             {addressFrom.slice(addressFrom.length - 4)}
           </span>
@@ -38,17 +38,17 @@ const TransactionCard = ({
       )}
       {amount && (
         <p className="text-gray-400">
-          Amount: <span className="text-white">{amount}</span>
+          Amount: <span className="dark:text-white text-gray-700">{amount}</span>
         </p>
       )}
       {message && (
         <p className="text-gray-400">
-          Message: <span className="text-white">{message}</span>
+          Message: <span className="dark:text-white text-gray-700">{message}</span>
         </p>
       )}
       {timestamp && (
         <p className="text-gray-400">
-          Time: <span className="text-white">{timestamp}</span>
+          Time: <span className="dark:text-white text-gray-700">{timestamp}</span>
         </p>
       )}
     </div>

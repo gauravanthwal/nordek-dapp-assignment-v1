@@ -7,18 +7,18 @@ const Transaction = () => {
   console.log(transactions);
 
   return (
-    <div>
+    <div className="dark:text-white text-gray-700">
       {currentAccount ? (
-        <h3 className="text-white text-3xl text-center my-2 ">
+        <h3 className="dark:text-white text-gray-700 text-3xl text-center my-2 ">
           Latest Transaction
         </h3>
       ) : (
-        <h3 className="text-white text-3xl text-center my-2 ">
+        <h3 className="dark:text-white text-gray-700 text-3xl text-center my-2 ">
           Connect your account to see latest transaction
         </h3>
       )}
 
-      <div className="flex flex-wrap justify-center items-center mt-10 gap-4">
+      <div className="dark:text-white text-gray-700 flex flex-wrap justify-center items-center mt-10 gap-4">
         {[...transactions].reverse().map((transaction, i) => (
           <TransactionCard
             key={i}

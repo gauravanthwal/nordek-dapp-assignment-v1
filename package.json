@@ -7,11 +7,14 @@
   },
   "dependencies": {
     "ethers": "^5.7.2",
+    "i": "^0.3.7",
     "next": "latest",
+    "npm": "^10.5.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.6.0",
-    "react-loader-spinner": "^5.3.4"
+    "react-loader-spinner": "^5.3.4",
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "@types/node": "17.0.35",

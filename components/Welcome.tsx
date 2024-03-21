@@ -30,9 +30,9 @@ const Welcome = () => {
   console.log(currentAccount);
 
   return (
-    <div className="flex justify-between items-center mb-8">
+    <div className="flex flex-col justify-between items-center mb-8 px-2 md:flex-row">
       <div>
-        <h1 className="text-3xl font-bold text-white">
+        <h1 className="text-3xl font-bold text-gray-700 dark:text-white">
           Send ETH across world.
         </h1>
         {currentAccount ? (
@@ -48,7 +48,7 @@ const Welcome = () => {
           </button>
         )}
       </div>
-      <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center blue-glassmorphism">
+      <div className="p-5 sm:w-96 w-full flex flex-col justify-start items-center white-glassmorphism dark:blue-glassmorphism border border-gray-300 dark:border-gray-700  rounded-xl my-8 md:my-0">
         <Input
           placeholder="Address To"
           name="addressTo"
@@ -81,7 +81,7 @@ const Welcome = () => {
           <button
             type="button"
             onClick={handleSubmit}
-            className="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] rounded-full cursor-pointer"
+            className="text-white bg-[#2952e3] hover:bg-[#2546bd]  w-full mt-2 border-[1px] p-2 border-[#3d4f7c] rounded-full cursor-pointer"
           >
             Send Now
           </button>
@@ -103,7 +103,7 @@ const Input: React.FC<IInput> = ({
       type={type}
       step="0.0001"
       onChange={(e) => handleChange(e, name)}
-      className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism"
+      className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-gray-700 dark:text-white border-none text-sm white-glassmorphism"
     />
   );
 };

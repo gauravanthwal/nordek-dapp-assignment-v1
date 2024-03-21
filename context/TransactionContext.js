@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
+ import { toast } from 'react-toastify';
 
 import { contractAddress } from "../utils/constants";
 import contractABI from "../utils/Transactions.json";
@@ -45,7 +46,7 @@ export const TransactionsProvider = ({ children }) => {
   // Check if Wallet is Connected
   const checkIfWalletIsConnected = async () => {
     try {
-      if (!ethereum) return alert("Please install metamask");
+      if (!ethereum) return toast.warn("Please install metamask");
       const accounts = await ethereum.request({ method: "eth_accounts" });
 
       if (accounts.length) {
@@ -65,7 +66,7 @@ export const TransactionsProvider = ({ children }) => {
   // Check if Threre are Transactions have made
   const checkIfTransactionsExist = async () => {
     try {
-      if (!ethereum) return alert("Please install metamask");
+      if (!ethereum) return toast.warn("Please install metamask to see transactions");
 
       const transactionsContract = createEthereumContract();
       const transactionsCount =
@@ -82,7 +83,7 @@ export const TransactionsProvider = ({ children }) => {
   // Get all Transactions
   const getAllTransaction = async () => {
     try {
-      if (!ethereum) return alert("Please install metamask");
+      if (!ethereum) return toast.warn("Please install metamask");
 
       const transactionsContract = createEthereumContract();
       const availableTransactions =
@@ -110,7 +111,7 @@ export const TransactionsProvider = ({ children }) => {
   // Connect Wallet to metamask
   const connectWallet = async () => {
     try {
-      if (!ethereum) return alert("Please install metamask");
+      if (!ethereum) return toast.warn("Please install metamask");
 
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
@@ -126,7 +127,7 @@ export const TransactionsProvider = ({ children }) => {
   // Send Transaction
   const sendTransaction = async () => {
     try {
-      if (!ethereum) return alert("Please install metamask");
+      if (!ethereum) return toast.warn("Please install metamask");
 
       const { addressTo, amount, keyword, message } = formData;
       const transactionsContract = createEthereumContract();
